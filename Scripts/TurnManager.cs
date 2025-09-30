@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    public static TurnManager Instance; // ½Ì±ÛÅæ ÆĞÅÏ (¿øÇÑ´Ù¸é)
+    public static TurnManager Instance; 
 
     private Queue<Unit> turnQueue = new Queue<Unit>();
     private bool isProcessingTurn = false;
@@ -36,10 +36,10 @@ public class TurnManager : MonoBehaviour
             .OrderByDescending(u => u.Speed)
             .ThenBy(u => Random.value);
 
-        Debug.Log("===== ÀüÅõ ½ÃÀÛ: Âü¿© À¯´Ö ¸ñ·Ï =====");
+        Debug.Log("===== ì „íˆ¬ ì‹œì‘: ì°¸ì—¬ ìœ ë‹› ëª©ë¡ =====");
         foreach (var unit in sorted)
         {
-            Debug.Log($"À¯´Ö ÀÌ¸§: {unit.name}, ½ºÇÇµå: {unit.Speed}");
+            Debug.Log($"ìœ ë‹› ì´ë¦„: {unit.name}, ìŠ¤í”¼ë“œ: {unit.Speed}");
             turnQueue.Enqueue(unit);
         }
         Debug.Log("================================");
@@ -62,7 +62,7 @@ public class TurnManager : MonoBehaviour
 
         if (turnQueue.Count == 0)
         {
-            Debug.Log("ÅÏÀ» ÁøÇàÇÒ À¯´ÖÀÌ ¾øÀ½");
+            Debug.Log("í„´ì„ ì§„í–‰í•  ìœ ë‹›ì´ ì—†ìŒ");
             yield break;
         }
 
@@ -92,3 +92,4 @@ public class TurnManager : MonoBehaviour
         }
     }
 }
+
