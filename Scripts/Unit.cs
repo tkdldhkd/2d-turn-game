@@ -41,7 +41,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // 스킬 사용 예시
     public void UseSkill(int index, Unit target)
     {
         if (index < 0 || index >= skills.Length) return;
@@ -95,7 +94,7 @@ public class Unit : MonoBehaviour
             UseSkill(randomIndex, target);
         }
 
-        // 애니메이션, 연출 대기
+        // 대기 시간
         yield return new WaitForSeconds(2f);
 
         Debug.Log($"{name}의 턴 종료");
